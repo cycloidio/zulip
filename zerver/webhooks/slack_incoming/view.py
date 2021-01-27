@@ -46,7 +46,7 @@ def api_slack_incoming_webhook(
         for block in payload["blocks"]:
             body = add_block(block, body)
 
-    if "attachments" in payload:
+    if "attachments" in payload and payload["attachments"] is not None:
         for attachment in payload["attachments"]:
             body = add_attachment(attachment, body)
 
@@ -86,6 +86,11 @@ def add_attachment(attachment: Dict[str, Any], body: str) -> str:
         attachment_body += "[{title}]({title_link})\n".format(**attachment)
     if "text" in attachment:
         attachment_body += attachment["text"]
+    if "fields" in attachment:
+        attachment_body += "```quote\n"
+        for field in attachment["fields"]:
+            attachment_body += "- *{title}*: {value}\n".format(**field)
+        attachment_body += "```"
 
     return body + attachment_body
 

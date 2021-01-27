@@ -83,7 +83,11 @@ Danny Torrence left the following review for your property:
    • **instance:** `1.2.3.4:8081`
    • **job:** `api-server`
    • **severity:** `critical`
-""".strip()
+
+```quote
+- **Project**: monitoring
+- **Env**: infra
+```""".strip()
 
         self.check_webhook(
             "attachment",
