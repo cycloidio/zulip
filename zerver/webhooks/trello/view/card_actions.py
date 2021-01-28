@@ -5,10 +5,10 @@ from zerver.lib.exceptions import UnsupportedWebhookEventType
 SUPPORTED_CARD_ACTIONS = [
     "updateCard",
     "createCard",
-    "addLabelToCard",
-    "removeLabelFromCard",
-    "addMemberToCard",
-    "removeMemberFromCard",
+    # "addLabelToCard",
+    # "removeLabelFromCard",
+    # "addMemberToCard",
+    # "removeMemberFromCard",
     "addAttachmentToCard",
     "addChecklistToCard",
     "commentCard",
@@ -20,6 +20,10 @@ IGNORED_CARD_ACTIONS = [
     "createCheckItem",
     "updateCheckItem",
     "updateList",
+    "addLabelToCard",
+    "removeLabelFromCard",
+    "addMemberToCard",
+    "removeMemberFromCard",
 ]
 
 CREATE = "createCard"
